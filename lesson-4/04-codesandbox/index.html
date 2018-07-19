@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }}</span>
+		</header>
+		<form v-on:submit="addItem">
+			<input id="itemForm" v-model="input">
+			<button>Add Dinosaur</button>
+		</form>
+		<ul>
+			<li v-for="item in items">
+				<button v-on:click="item.quantity += 1">+</button> {{ item.quantity }}
+				<button v-on:click="item.quantity -= 1">-</button> {{ item.text }}<button v-on:click="removeItem" class="extinct">Make Extinct</button>
+			</li>
+		</ul>
+		<ul>
+			<li>Total Dinosaurs: {{ totalDinos }} <span>Updated: {{ dinosUpdated }}</span></li>
+			<li>Total Species: {{ totalSpecies }} <span>Updated: {{ speciesUpdated }}</span></li>
+		</ul>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

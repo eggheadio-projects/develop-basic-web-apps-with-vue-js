@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }} <span v-on:click="toggle">{{ editLabel }}</span></header>
+		<ul>
+			<li v-for="item in items">
+				<keep-alive>
+					<component v-bind:is="currentView" v-bind:initial-quantity="item.quantity" v-bind:name="item.text" v-bind:diet="item.diet"></component>
+				</keep-alive>
+			</li>
+		</ul>
+	</div>
+	<script type="text/x-template" id="dino-edit">
+		<div><button v-on:click="increment"> {{ quantity }}</button> {{ name }}</div>
+	</script>
+	<script type="text/x-template" id="dino-show">
+		<div><strong>{{ name }}</strong> | {{ diet }}</div>
+	</script>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+  padding: 2em;
+}
+p {
+  margin: 1em 0;
+}
+input {
+  margin-top: 1em;
+}
+label {
+  font-weight: 400;
+}

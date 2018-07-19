@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }}</header>
+		<button v-bind:class="[sizeToggle ? 'large' : '', {'rounded': isRounded}]" v-bind:style="styles" v-bind:disabled="disabled">Start Tour</button>
+		<hr>
+		<h4>Options</h4>
+		<ul>
+			<li><input type="checkbox" v-model="sizeToggle"><label>Large</label></li>
+			<li><input type="checkbox" id="round" v-model="isRounded"><label for="round">Rounded</label></li>
+			<li><input type="checkbox" v-model="disabled"><label>Disabled</label></li>
+			<li><input type="text" v-model="backgroundColor" /><label>Background Color</label></li>
+			<li><input type="text" v-model="fontColor" /><label>Font Color</label></li>
+			<li><input type="range" v-model="range" min="15" max="85"><label>Position</label></li>
+		</ul>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

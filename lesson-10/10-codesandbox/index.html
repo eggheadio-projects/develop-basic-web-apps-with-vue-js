@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }}</header>
+		<ul>
+			<li v-for="dino in dinos">
+				<dino-counter v-bind:initial-quantity="dino.quantity" v-bind:name="dino.name" v-on:increment="incrementTotal"></dino-counter>
+			</li>
+		</ul>
+		<p>Total Dinosaurs: {{ total }}</p>
+	</div>
+	
+	<script type="text/x-template" id="dino-counter">
+		<div>
+			<button v-on:click="increment">{{ quantity }}</button> {{ name }}
+		</div>
+	</script>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

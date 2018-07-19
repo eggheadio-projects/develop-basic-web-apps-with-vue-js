@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.min.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }}</header>
+		<form v-on:submit.prevent="addItem">
+			<input id="itemForm" v-model="input">
+			<button v-bind:disabled="buttonDisabled">{{ buttonText }}</button>
+		</form>
+		<ul>
+			<li v-for="(item, index) in items">
+				<span>{{ item }}</span>
+			</li>
+		</ul>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

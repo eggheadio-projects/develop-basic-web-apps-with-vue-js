@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>{{ title }}</header>
+		<div>
+			<input id="itemForm" v-on:keyup.enter="addItem">
+			<button v-on:click="addItem">Add Dinosaur</button>
+		</div>
+
+		<ul>
+			<li v-for="(item, index) in items">
+				<button v-on:click="deleteItem(index)">X</button> {{ item.text }}
+			</li>
+		</ul>
+
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

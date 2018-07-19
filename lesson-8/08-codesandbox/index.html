@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script data-require="vue.js@*" data-semver="10.0.26" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<div id="card">
+		<header>Dinosaurs</header>
+		<form v-on:submit.prevent="addDinos">
+			<!--     <button v-on:click="total += 1">Add Dinosaur</button> -->
+			<button type="submit">Add {{ amount }} Dinosaurs</button>
+			<input type="number" v-model.number="amount" />
+		</form>
+		<p>You have {{ total }} dinosaurs!</p>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
